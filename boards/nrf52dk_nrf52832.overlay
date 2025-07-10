@@ -8,7 +8,7 @@
 
 #include "../nrf52-bindings.h"
 
-&arduino_spi { /* MOSI on D11 / P0.23 */
+&arduino_spi {/* MOSI on D11 / P0.23 */
 	compatible = "nordic,nrf-spim";
 	led_strip: ws2812@0 {
 		compatible = "worldsemi,ws2812-spi";
@@ -20,8 +20,8 @@
 		/* WS2812 */
 		chain-length = <16>; /* arbitrary; change at will */
 		color-mapping = <LED_COLOR_ID_GREEN
-				 LED_COLOR_ID_RED
-				 LED_COLOR_ID_BLUE>;
+		LED_COLOR_ID_RED
+		LED_COLOR_ID_BLUE>;
 		spi-one-frame = <ONE_FRAME>;
 		spi-zero-frame = <ZERO_FRAME>;
 	};
@@ -31,4 +31,8 @@
 	aliases {
 		led-strip = &led_strip;
 	};
+};
+
+&arduino_adc {
+	io-channel-map = <0 &adc 1>, <1 &adc 2>, <2 &adc 4>, <3 &adc 5>, <4 &adc 6>, <5 &adc 7>;
 };

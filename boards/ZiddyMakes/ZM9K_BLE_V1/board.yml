@@ -1,0 +1,5 @@
+board:
+  name: ZM9K_BLE_V1
+  vendor: ZiddyMakes
+  socs:
+    - name: nrf52840
