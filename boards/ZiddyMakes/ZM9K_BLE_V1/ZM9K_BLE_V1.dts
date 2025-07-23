@@ -15,7 +15,7 @@
 	leds {
 		compatible = "gpio-leds";
 		led0: led_0 {
-			gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
+			gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
 			label = "Green LED 0";
 		};
 		led1: led_1 {
@@ -29,6 +29,14 @@
 		led3: led_3 {
 			gpios = <&gpio0 16 GPIO_ACTIVE_LOW>;
 			label = "Green LED 3";
+		};
+	};
+
+	ws2812_power {
+		compatible = "gpio-leds";
+		ws2812_power0: ws2812_power_0 {
+			gpios = <&gpio0 25 GPIO_ACTIVE_LOW>;
+			label = "WS2812 Power";
 		};
 	};
 
@@ -153,12 +161,11 @@
 
 arduino_spi: &spi3 {
 	status = "okay";
-	cs-gpios = <&arduino_header 16 GPIO_ACTIVE_LOW>; /* D10 */
+	cs-gpios = <&gpio0 26 GPIO_ACTIVE_LOW>; /* D10 */
 	pinctrl-0 = <&spi3_default>;
 	pinctrl-1 = <&spi3_sleep>;
 	pinctrl-names = "default", "sleep";
 };
-
 
 &flash0 {
 	partitions {
@@ -187,3 +194,6 @@ arduino_spi: &spi3 {
 		};
 	};
 };
+
+
+

@@ -4,10 +4,10 @@
 CONFIG_ARM_MPU=y
 
 # Enable hardware stack protection
-CONFIG_HW_STACK_PROTECTION=y
+# CONFIG_HW_STACK_PROTECTION=y
 
 # Enable RTT
-CONFIG_USE_SEGGER_RTT=y
+# CONFIG_USE_SEGGER_RTT=y
 
 # enable GPIO
 CONFIG_GPIO=y
@@ -17,4 +17,18 @@ CONFIG_SERIAL=y
 
 # enable console
 CONFIG_CONSOLE=y
-CONFIG_UART_CONSOLE=y
+# CONFIG_UART_CONSOLE=y
+
+# enable output to .uf2
+CONFIG_BUILD_OUTPUT_UF2=y
+
+# Prevents overwriting bootloader/SOFTDEVICE
+CONFIG_USE_DT_CODE_PARTITION=y
+
+# Essential Flash related configs to make work with Bootloader & Softdevice
+CONFIG_MPU_ALLOW_FLASH_WRITE=y
+CONFIG_NVS=y
+# CONFIG_SETTINGS_NVS=y
+CONFIG_FLASH=y
+CONFIG_FLASH_PAGE_LAYOUT=y
+CONFIG_FLASH_MAP=y

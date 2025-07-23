@@ -1,1 +1,10 @@
 /build
+/.cursor
+/.venv
+/zephyr
+/.west
+*.DS_Store
+/modules
+/.vscode
+/bootloader
+/tools
